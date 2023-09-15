@@ -10,7 +10,8 @@ ASDF_VERSION=${ASDF_VERSION:-v0.12.0}
 PERFIX_DIR="/openssl-${ARCH}"
 OPENSSL_ARCHIVE="openssl-${ARCH}.tar.gz"
 
-cd / && \
+yum install -y ncurses-devel && \
+    cd / && \
     curl -fSL "https://github.com/cocoa-xu/elixir_make-manylinux-openssl-precompiled/releases/download/v${OPENSSL_VERSION}/${OPENSSL_ARCHIVE}" -o "${OPENSSL_ARCHIVE}" && \
     tar -xf "${OPENSSL_ARCHIVE}" && \
     git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch "${ASDF_VERSION}" && \
