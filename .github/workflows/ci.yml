@@ -39,7 +39,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: pull docker
+      - name: Pull docker image
         run: |
           sudo docker pull quay.io/pypa/manylinux2014_${{ matrix.arch }}:latest
 
