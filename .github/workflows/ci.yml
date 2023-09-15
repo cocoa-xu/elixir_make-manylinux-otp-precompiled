@@ -26,7 +26,7 @@ jobs:
   linux:
     runs-on: ubuntu-latest
     env:
-      MIX_ENV: prod
+      OTP_VERSION: "26.0.2"
       OPENSSL_VERSION: "3.1.1"
       ASDF_VERSION: "v0.12.0"
 
@@ -52,4 +52,4 @@ jobs:
           cp .github/script-to-build-manylinux2014.sh ./
           cp .github/do-build-manylinux2014.sh ./
 
-          bash ./script-to-build-manylinux2014.sh "${GITHUB_REF##*/v}" "${{ matrix.arch }}"
+          bash ./script-to-build-manylinux2014.sh "${{ env.OTP_VERSION }}" "${{ matrix.arch }}"
